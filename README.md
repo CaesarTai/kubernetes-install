@@ -76,7 +76,8 @@ kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=172.
 > 其中，`--pod-network-cidr`是规定pod内部可用的IP段，`--apiserver-advertise-address`是Master的IP，`--kubernetes-version`是当前k8s版本号。
 
 安装成功后，会有如下提示。
-![](https://pic.downk.cc/item/5f042b8214195aa5947afe3e.png)
+![](https://github.com/CaesarTai/kubernetes-install/blob/master/pics/pic1.png)
+
 需要执行图中提示的语句,将admin配置应用到集群配置中
 ```
 mkdir -p $HOME/.kube 
@@ -114,7 +115,8 @@ https://blog.csdn.net/networken/article/details/84571373
 ```
 kubeadm join 172.16.179.233:6443 --token 51eo0p.dpd3ffh9x27omcb2 --discovery-token-ca-cert-hash sha256:de66e223697e13c12ad977ab9a84fbbf83aea7bb903c7fea6fb2f198e88353af
 ```
-![](https://pic.downk.cc/item/5f042bc414195aa5947b17c6.png)
+![](https://github.com/CaesarTai/kubernetes-install/blob/master/pics/pic2.png)
+
 ### 安装配置网络插件
 以flannel为例
 ```
@@ -124,7 +126,8 @@ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documen
 
 ### 查看安装结果
 输入`kubectl get nodes`，节点状态为ready则表示成功；
-![](https://pic.downk.cc/item/5f042bf714195aa5947b2c7c.png)
+![](https://github.com/CaesarTai/kubernetes-install/blob/master/pics/pic3.png)
 
 若不成功，可以通过`kubectl get pod --all-namespaces`检查是哪个pod出了问题。
-![](https://pic.downk.cc/item/5f042bf714195aa5947b2c7e.png)
+![](https://github.com/CaesarTai/kubernetes-install/blob/master/pics/pic4.png)
+
